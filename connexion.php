@@ -1,7 +1,25 @@
 <?php
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
+if (!isset($_POST['submit'])) {
+    echo 'Veuillez entrer votre Nom et Mot de passe';
+} elseif (isset($_POST['submit'])) {
+    $login = $_POST['login'];
+    $mdp = $_POST['password'];
+    $req = mysqli_query($connect, 'SELECT * FROM `utilisateurs`');
+    $table = mysqli_fetch_all($req, MYSQLI_ASSOC);
+    var_dump($table);
+    foreach ($table as $key => $value) {
+        if ($value['login'] == $login && $value['password'] == $mdp) {
+            header("location:profil.php");
+            exit;
+        }
 
+    }
+    if ($value['login'] != $login || $value['password'] != $mdp) {
+        echo 'Erreur de login/Mot de passe';
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
