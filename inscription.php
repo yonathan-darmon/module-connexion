@@ -1,11 +1,11 @@
 <?php
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
-
-/*on recupere les données*/
+/*On commence le formulaire*/
 if (!isset($_POST['submit'])) {
     echo 'Inserer vos données personnels';
 }
+/*Ce qu il se passe quand on clique sur envoyer en ayant le meme mdp a chaque fois*/
 if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
     $login = $_POST['login'];
     $prenom = $_POST['prenom'];
@@ -13,7 +13,11 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
     $password = $_POST['password'];
     $insert = "INSERT INTO utilisateurs(login, prenom, nom, password) VALUES ('$login','$prenom','$nom','$password')";
     mysqli_query($connect, $insert);
-} elseif (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
+    header("location:connexion.php");
+    exit;
+}
+/*Si le mdp et la confirmation du mdp n est pas la meme*/
+elseif (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
     echo 'verifier votre mot de passe';
 }
 ?>
@@ -29,6 +33,7 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
 <body>
 <header></header>
 <main>
+    <!--le formulaire-->
     <form action="#" method="post">
         <input type="text" name="login">
         <p>Nom d'utilisateur</p>

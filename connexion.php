@@ -3,16 +3,17 @@ session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
 if (!isset($_POST['submit'])) {
     echo 'Veuillez entrer votre Nom et Mot de passe';
-} elseif (isset($_POST['submit'])) {
+}
+/*ce qu il se passe quand on clique sur submit*/
+elseif (isset($_POST['submit'])) {
     $login = $_POST['login'];
     $mdp = $_POST['password'];
     $req = mysqli_query($connect, 'SELECT * FROM `utilisateurs`');
     $table = mysqli_fetch_all($req, MYSQLI_ASSOC);
-    var_dump($table);
-    foreach ($table as $key => $value) {
-        if ($value['login'] == $login && $value['password'] == $mdp) {
-            $_SESSION['login']=$login;
-            $_SESSION['password']=$mdp;
+    foreach ($table as $key => $value) { /*on parcours les donnée de la bdd*/
+        if ($value['login'] == $login && $value['password'] == $mdp) {/* si le mot de passe et le login sont les memes*/
+            $_SESSION['login'] = $login;
+            $_SESSION['password'] = $mdp;
 
             header("location:profil.php");
             exit;
