@@ -38,10 +38,10 @@ elseif (isset($_POST['submit'])) {
 <header></header>
 <main>
     <form action="#" method="post">
+        <label for="login">Nom d'utilisateur</label>
         <input type="text" name="login">
-        <p>Nom d'utilisateur</p>
-        <input type="text" name="password">
-        <p>Mot de passe</p>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password">
         <input type="submit" name="submit" value="Connexion">
     </form>
     <a href="inscription.php">Pas encore inscrit?</a>

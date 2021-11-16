@@ -2,11 +2,12 @@
 session_start();
 echo '<h1>Bienvenue ' . $_SESSION['login'] .'</h1>';
 $login=$_SESSION['login'];
-$mdp=$_SESSION['mdp'];
+$mdp=$_SESSION['password'];
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
-$req= mysqli_query($connect,'SELECT * FROM utilisateurs WHERE '') ;
+$req= mysqli_query($connect,"SELECT * FROM utilisateurs WHERE password='$mdp' AND login='$login' ") ;
 $table=mysqli_fetch_all($req,MYSQLI_ASSOC);
-
+var_dump($table);
+foreach ($table as $key=>$value);
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,16 +22,16 @@ $table=mysqli_fetch_all($req,MYSQLI_ASSOC);
 <header></header>
 <main>
     <form action="#" method="post">
-        <input type="text" name="login" value="login">
-        <p>Nom d'utilisateur</p>
-        <input type="text" name="prenom" value="prenom">
-        <p>Prénom</p>
-        <input type="text" name="nom" value="nom">
-        <p>Nom</p>
-        <input type="text" name="password" value="password">
-        <p>Mot de passe</p>
-        <input type="text" name="confirm" value="confirm">
-        <p>Confirmer votre mot de passe</p>
+        <label for="login">Nom d'utilisateur</label>
+        <input type="text" name="login" value=<?php echo $value['login'];?> >
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" value=<?php echo $value['prenom'];?> >
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" value=<?php echo $value['nom'];?> >
+        <label for="password">Mot de passe</label>
+        <input type="text" name="password" value=<?php echo $value['password'];?> >
+        <label for="confir">Confirmer votre mot de passe</label>
+        <input type="text" name="confirm" value=<?php echo $value['password'];?>>
         <input type="submit" value="envoyer" name="submit">
     </form>
 </main>

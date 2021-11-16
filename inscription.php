@@ -3,7 +3,7 @@ session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
 /*On commence le formulaire*/
 if (!isset($_POST['submit'])) {
-    echo 'Inserer vos données personnels';
+    echo '<h1>Inserer vos données personnels</h1>';
 }
 /*Ce qu il se passe quand on clique sur envoyer en ayant le meme mdp a chaque fois*/
 if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
@@ -18,7 +18,7 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
 }
 /*Si le mdp et la confirmation du mdp n est pas la meme*/
 elseif (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
-    echo 'verifier votre mot de passe';
+    echo '<h1>verifier votre mot de passe</h1>';
 }
 ?>
 <!doctype html>
@@ -35,16 +35,16 @@ elseif (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
 <main>
     <!--le formulaire-->
     <form action="#" method="post">
+        <label for="login">Nom d'utilisateur</label>
         <input type="text" name="login">
-        <p>Nom d'utilisateur</p>
+        <label for="prenom">Prénom</label>
         <input type="text" name="prenom">
-        <p>Prénom</p>
+        <label for="nom">Nom</label>
         <input type="text" name="nom">
-        <p>Nom</p>
-        <input type="text" name="password">
-        <p>Mot de passe</p>
-        <input type="text" name="confirm">
-        <p>Confirmer votre mot de passe</p>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password">
+        <label for="confirm">Confirmation de mot de passe</label>
+        <input type="password" name="confirm">
         <input type="submit" value="envoyer" name="submit">
     </form>
 </main>
