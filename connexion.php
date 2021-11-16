@@ -11,6 +11,9 @@ if (!isset($_POST['submit'])) {
     var_dump($table);
     foreach ($table as $key => $value) {
         if ($value['login'] == $login && $value['password'] == $mdp) {
+            $_SESSION['login']=$login;
+            $_SESSION['password']=$mdp;
+
             header("location:profil.php");
             exit;
         }
