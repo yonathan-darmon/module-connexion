@@ -19,6 +19,7 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
     $update = mysqli_query($connect, "UPDATE utilisateurs SET login = '$util', password = '$mdp', prenom = '$prenom',nom = '$nom',password = '$password' WHERE login = '$login' AND password = '$mdp'");
     mysqli_query($connect, $update);
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,6 +46,11 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
         <input type="text" name="confirm" value=<?php echo $value['password']; ?>>
         <input type="submit" value="envoyer" name="submit">
     </form>
+    <?php
+    if ($login=='admin' && $mdp=='admin'){
+        echo "<a href='admin.php'>Acces à la page admin</a>";
+    }
+    ?>
 </main>
 <footer></footer>
 </body>
