@@ -47,7 +47,7 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
         <input type="text" name="password" value=<?php echo $value['password']; ?>>
         <label for="confir">Confirmer votre mot de passe</label>
         <input type="text" name="confirm" value=<?php echo $value['password']; ?>>
-        <input type="submit" value="envoyer" name="submit">
+        <input type="submit" value="modifier" name="submit">
         <input type="submit" value="Deconnexion" name="deco">
     </form>
     <?php
