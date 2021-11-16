@@ -3,8 +3,7 @@ session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
 if (!isset($_POST['submit'])) {
     echo 'Veuillez entrer votre Nom et Mot de passe';
-}
-/*ce qu il se passe quand on clique sur submit*/
+} /*ce qu il se passe quand on clique sur submit*/
 elseif (isset($_POST['submit'])) {
     $login = $_POST['login'];
     $mdp = $_POST['password'];
@@ -24,6 +23,7 @@ elseif (isset($_POST['submit'])) {
         echo 'Erreur de login/Mot de passe';
     }
 }
+
 ?>
 <!doctype html>
 <html lang="en">
