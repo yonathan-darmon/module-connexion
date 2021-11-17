@@ -3,6 +3,7 @@ $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexi
 $req=mysqli_query($connect, 'SELECT * FROM utilisateurs');
 $table=mysqli_fetch_all($req,MYSQLI_ASSOC);
 foreach ($table as $key=>$value);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,6 +30,7 @@ foreach ($table as $key=>$value);
         foreach ($table as $key=>$value){
             echo"<tr>";
             foreach ($value as $value2){
+
                 echo "<td>$value2</td>";
             }
             echo"</tr>";

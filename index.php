@@ -1,9 +1,11 @@
 <?php
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
-$req=mysqli_query($connect, 'SELECT * FROM utilisateurs');
-$table=mysqli_fetch_all($req,MYSQLI_ASSOC);
-foreach ($table as $key=>$value);
+$req = mysqli_query($connect, 'SELECT nom,prenom FROM utilisateurs');
+$table = mysqli_fetch_all($req, MYSQLI_ASSOC);
+foreach ($table as $key => $value) ;
+foreach ($value as $value2);
+var_dump($value);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,9 +19,25 @@ foreach ($table as $key=>$value);
 <body>
 <header></header>
 <main>
-<div class="card">
 
-</div>
+  <!--  --><?php
+/*    if (isset($_SESSION['login'])) {
+        $login = $_SESSION['login'];
+
+        if ($_SESSION['login']==$value2['login']){
+        echo '<p>La carte de membre de ' . $login . '</p>';
+        echo "<div class=card>";
+        echo "<div class=text>
+                 <p>$nom </p>
+                 <p>$prenom</p>
+
+               </div>";
+        echo " <img src= alt=>";
+        echo "</div>";
+    }
+    */?>
+
+
 </main>
 <footer></footer>
 
