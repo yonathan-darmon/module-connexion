@@ -17,7 +17,9 @@ foreach ($table as $key=>$value);
 <body>
 <header></header>
 <main>
+<div class="card">
 
+</div>
 </main>
 <footer></footer>
 
