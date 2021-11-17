@@ -1,11 +1,9 @@
 <?php
 session_start();
+
 $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
-$req = mysqli_query($connect, 'SELECT nom,prenom FROM utilisateurs');
-$table = mysqli_fetch_all($req, MYSQLI_ASSOC);
-foreach ($table as $key => $value) ;
-foreach ($value as $value2);
-var_dump($value);
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,27 +13,49 @@ var_dump($value);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/index.css">
+    <?php
+    if (isset($_SESSION['login'])) {
+        echo '<link rel="stylesheet" href="css/left.css">';
+    } else {
+        echo '<link rel="stylesheet" href="css/right.css">';
+    }
+    ?>
 </head>
 <body>
 <header></header>
 <main>
 
-  <!--  --><?php
-/*    if (isset($_SESSION['login'])) {
+    <?php
+    if (isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
-
-        if ($_SESSION['login']==$value2['login']){
-        echo '<p>La carte de membre de ' . $login . '</p>';
-        echo "<div class=card>";
-        echo "<div class=text>
-                 <p>$nom </p>
-                 <p>$prenom</p>
-
-               </div>";
-        echo " <img src= alt=>";
+        $password = $_SESSION['password'];
+        $req = mysqli_query($connect, "SELECT nom,prenom FROM utilisateurs WHERE login='$login' AND password='$password' ");
+        $table = mysqli_fetch_all($req, MYSQLI_ASSOC);
+        foreach ($table as $key => $value) ;
+        $nom = $value['nom'];
+        $prenom = $value['prenom'];
+        echo "<div class='container'>";
+        echo "<div class='card'>";
+        echo "<div class='text'> <p>  La carte de membre de <b> $login </b> </p>
+                                     <p>$nom </p>
+                                     <p>$prenom</p></div>";
+        echo "<img src='image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
         echo "</div>";
+    } else {
+        echo "<div class='container'>";
+        echo "<div class='card'>";
+        echo "<div class='text'>  <p> Bienvenue sur le classeur</p>
+                                     <p>de Madame Darmon</p>
+                                     <div class='bouton'><p><a href='php/connexion.php'>Ouvrir le classeur</a></p></div></p></div>";
+        echo "<img src='image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
+        echo "</div>";
+
     }
-    */?>
+    ?>
 
 
 </main>

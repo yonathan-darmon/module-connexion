@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Parisienne', cursive;
+}
+
+main {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(207, 137, 110);
+
+}
+
+.card {
+    border: 2px solid black;
+    padding-left: 3%;
+    display: flex;
+    width: 40%;
+    border-radius: 21px;
+    background: #CF896E;
+    box-shadow: 20px 20px 35px #93614e,
+    -20px -20px 35px #ffb18e;
+
+
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    padding-top: 3%;
+    width: 50%;
+    font-size: larger;
+    color: floralwhite;
+
+
+}
+
+.book {
+    width: 50%;
+}
+
+.bouton a {
+    display: block;
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background: url(images/bouton-noir.png) no-repeat;
+    color: white;
+    text-decoration: none;
+}
+
+.bouton {
+    width: 150px;
+    height: 50px;
+    background: #CF896E;
+    color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+.bouton :hover {
+    box-shadow: 20px 20px 35px #93614e,
+    -20px -20px 35px #ffb18e;
+    border-radius: 21px;
+}
+
+@media screen and (max-width: 774px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 55%;
+    }
+    .book{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border-top-right-radius:0;
+        border-bottom-left-radius: 20px;
+    }
+    .bouton a{
+        padding: 0;
+    }
+}
