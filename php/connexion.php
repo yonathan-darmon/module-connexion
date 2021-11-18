@@ -14,7 +14,7 @@ elseif (isset($_POST['submit'])) {
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $mdp;
 
-            header("location:profil.php");
+            header("location:../index.php");
             exit;
         }
 

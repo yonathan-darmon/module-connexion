@@ -16,12 +16,12 @@ $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexi
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
     </style>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="asset/css/index.css">
     <?php
     if (isset($_SESSION['login'])) {
-        echo '<link rel="stylesheet" href="css/left.css">';
+        echo '<link rel="stylesheet" href="asset/css/session.css">';
     } else {
-        echo '<link rel="stylesheet" href="css/right.css">';
+        echo '<link rel="stylesheet" href="asset/css/passess.css">';
     }
     ?>
 </head>
@@ -43,15 +43,17 @@ $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexi
         echo "<div class='text'> <p>  La carte de membre de <b> $login </b> </p>
                                      <p>$nom </p>
                                      <p>$prenom</p></div>";
-        echo "<img src='image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
+        echo "<img src='asset/image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
         echo "</div>";
+
     } else {
         echo "<div class='container'>";
         echo "<div class='card'>";
-        echo "<div class='text'>  <p> Bienvenue sur le classeur</p>
-                                     <p>de Madame Darmon</p>
+        echo "<div class='text'>  <p> Le classeur</p>
+                                     <p>de </p>
+                                     <p>Madame Darmon</p>
                                      <div class='bouton'><p><a href='php/connexion.php'>Ouvrir le classeur</a></p></div></p></div>";
-        echo "<img src='image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
+        echo "<img src='asset/image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
         echo "</div>";
 
     }
