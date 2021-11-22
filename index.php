@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
+$connect = mysqli_connect("localhost:3306", "yoni", "Marseille,13", "yonathan-darmon_moduleconnexion"); /*connexion a la base*/
 if (isset($_POST['deco'])) {
     header("location:index.php");
     session_destroy();

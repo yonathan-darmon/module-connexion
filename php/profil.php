@@ -34,7 +34,7 @@ if (!isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
         $mdp = $_SESSION['password'];
 
-        $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
+        $connect = mysqli_connect("localhost:3306", "yoni", "Marseille,13", "yonathan-darmon_moduleconnexion"); /*connexion a la base*/
         $req = mysqli_query($connect, "SELECT * FROM utilisateurs WHERE password='$mdp' AND login='$login' ");
         $table = mysqli_fetch_all($req, MYSQLI_ASSOC);
         foreach ($table as $key => $value) ;
@@ -58,7 +58,6 @@ if (!isset($_SESSION['login'])) {
         <label for="confir">Confirmer votre mot de passe</label>
         <input type="text" name="confirm" value=<?php echo $value['password']; ?>>
         <input type="submit" value="modifier" name="submit">
-        <input type="submit" value="Deconnexion" name="deco">
     </form>
     <?php
     if ($login == 'admin' && $mdp == 'admin') {
