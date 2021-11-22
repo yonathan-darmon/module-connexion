@@ -15,16 +15,19 @@ foreach ($table as $key => $value) ;
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../asset/css/connexion.css">
+    <link rel="stylesheet" href="../asset/css/header.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
     </style>
     <title>Document</title>
 </head>
 <body>
-<header></header>
+<header>
+    <?php require "header.php"; ?>
+</header>
 <main>
     <!--le formulaire-->
-    <form action="#" method="post">
+    <form action="#" method="post" id="form">
         <?php
         if (!isset($_POST['submit'])) {
             echo '<h1>Inserer vos données personnels</h1>';
@@ -49,8 +52,8 @@ foreach ($table as $key => $value) ;
 
         }
         if (empty($login) || empty($prenom) || empty($nom) || empty($password)) {
-            echo 'Veuillez remplir tous les champs';  }
-        /*Si le mdp et la confirmation du mdp n est pas la meme*/
+            echo 'Veuillez remplir tous les champs';
+        } /*Si le mdp et la confirmation du mdp n est pas la meme*/
         elseif (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
             echo '<h1>verifier votre mot de passe/login</h1>';
         }

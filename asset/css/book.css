@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Parisienne', cursive;
+
 
 }
 
@@ -26,6 +26,11 @@ body {
     background-color: #ffb18e;
 }
 
+header {
+    font-family: 'Roboto', sans-serif;
+!important;
+}
+
 html {
     font-size: 100%;
 }
@@ -37,22 +42,22 @@ ul {
 }
 
 a {
-    color: #2c3e50;
     text-decoration: none;
 }
 
 .btn {
     display: inline-block;
     text-transform: uppercase;
-    border: 2px solid #2c3e50;
     margin-top: 100px;
     font-size: 0.7em;
     font-weight: 700;
     padding: 0.1em 0.4em;
     text-align: center;
-    -webkit-transition: color 0.3s, border-color 0.3s;
-    -moz-transition: color 0.3s, border-color 0.3s;
-    transition: color 0.3s, border-color 0.3s;
+
+}
+
+.inside {
+    margin-top: 25px;
 }
 
 .btn:hover {
@@ -625,35 +630,6 @@ Table of Contents
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: 10;
-
-&
-.new {
-    background: #63c930;
-
-&
-:before,
-
-&
-:after {
-    border-bottom: 20px solid #63c930;
-}
-
-}
-&
-.bestseller {
-    background: #c0392b;
-
-&
-:before,
-
-&
-:after {
-    border-bottom: 20px solid #c0392b;
-}
-
-}
-
-
 }
 
 .ribbon::before,
@@ -690,6 +666,7 @@ figcaption {
 figcaption h1 {
     margin: 0;
 }
+
 figcaption p {
     color: darkslategray;
     line-height: 1.3;

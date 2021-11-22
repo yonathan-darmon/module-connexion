@@ -60,7 +60,6 @@ img {
     line-height: 50px;
     text-align: center;
     vertical-align: middle;
-    background: url(images/bouton-noir.png) no-repeat;
     color: white;
     text-decoration: none;
 }
@@ -102,4 +101,15 @@ img {
     .bouton a {
         padding: 0;
     }
+}
+
+#admin {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    border: solid 3px;
+    border-radius: 15px;
+    border-spacing: 10px;
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['deco'])){
+if (isset($_POST['deco'])) {
     header("location:connexion.php");
     session_destroy();
 }
@@ -17,15 +17,18 @@ if (!isset($_SESSION['login'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../asset/css/connexion.css">
+    <link rel="stylesheet" href="../asset/css/header.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
     </style>
     <title>Document</title>
 </head>
 <body>
-<header></header>
+<header>
+    <?php require "header.php"; ?>
+</header>
 <main>
-    <form action="#" method="post">
+    <form action="#" method="post" id="form">
         <?php
         echo '<h1>Bienvenue ' . $_SESSION['login'] . '</h1>';
         $login = $_SESSION['login'];
@@ -58,7 +61,7 @@ if (!isset($_SESSION['login'])) {
         <input type="submit" value="Deconnexion" name="deco">
     </form>
     <?php
-    if ($login=='admin' && $mdp=='admin'){
+    if ($login == 'admin' && $mdp == 'admin') {
         echo "<a href='admin.php'>Acces à la page admin</a>";
     }
     ?>
