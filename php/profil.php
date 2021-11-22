@@ -45,6 +45,7 @@ if (!isset($_SESSION['login'])) {
             $password = $_POST['password'];
             $update = mysqli_query($connect, "UPDATE utilisateurs SET login = '$util', password = '$mdp', prenom = '$prenom',nom = '$nom',password = '$password' WHERE login = '$login' AND password = '$mdp'");
             mysqli_query($connect, $update);
+            header("location : book.php");
         }
         ?>
         <label for="login">Nom d'utilisateur</label>
