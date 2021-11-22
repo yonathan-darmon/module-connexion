@@ -7,22 +7,7 @@ if(isset($_POST['deco'])){
 if (!isset($_SESSION['login'])) {
     header("location: connexion.php");
 }
-echo '<h1>Bienvenue ' . $_SESSION['login'] . '</h1>';
-$login = $_SESSION['login'];
-$mdp = $_SESSION['password'];
 
-$connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
-$req = mysqli_query($connect, "SELECT * FROM utilisateurs WHERE password='$mdp' AND login='$login' ");
-$table = mysqli_fetch_all($req, MYSQLI_ASSOC);
-foreach ($table as $key => $value) ;
-if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
-    $util = $_POST['login'];
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $password = $_POST['password'];
-    $update = mysqli_query($connect, "UPDATE utilisateurs SET login = '$util', password = '$mdp', prenom = '$prenom',nom = '$nom',password = '$password' WHERE login = '$login' AND password = '$mdp'");
-    mysqli_query($connect, $update);
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,12 +16,34 @@ if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../asset/css/connexion.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    </style>
     <title>Document</title>
 </head>
 <body>
 <header></header>
 <main>
     <form action="#" method="post">
+        <?php
+        echo '<h1>Bienvenue ' . $_SESSION['login'] . '</h1>';
+        $login = $_SESSION['login'];
+        $mdp = $_SESSION['password'];
+
+        $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexion a la base*/
+        $req = mysqli_query($connect, "SELECT * FROM utilisateurs WHERE password='$mdp' AND login='$login' ");
+        $table = mysqli_fetch_all($req, MYSQLI_ASSOC);
+        foreach ($table as $key => $value) ;
+        if (isset($_POST['submit']) && $_POST['password'] === $_POST['confirm']) {
+            $util = $_POST['login'];
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $password = $_POST['password'];
+            $update = mysqli_query($connect, "UPDATE utilisateurs SET login = '$util', password = '$mdp', prenom = '$prenom',nom = '$nom',password = '$password' WHERE login = '$login' AND password = '$mdp'");
+            mysqli_query($connect, $update);
+        }
+        ?>
         <label for="login">Nom d'utilisateur</label>
         <input type="text" name="login" value=<?php echo $value['login']; ?>>
         <label for="prenom">Prénom</label>

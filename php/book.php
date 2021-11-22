@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../asset/css/book.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +28,9 @@
                 <ul class='page'>
                     <li></li>
                     <li>
-                        <a class="btn" href="#">Download</a>
+                        <a class="btn" href="profil.php">Mes
+                            </br>données
+                        </a>
                     </li>
                     <li></li>
                     <li></li>
@@ -41,9 +46,9 @@
                     <li></li>
                 </ul>
                 <figcaption>
-                    <h1>Responsive Web Design</h1>
-                    <span>By Ethan Marcotte</span>
-                    <p>From mobile browsers to netbooks and tablets, users are visiting your sites from an increasing array of devices and browsers. Are your designs ready?...</p>
+                    <h1>Bienvenue sur ta page du classeur</h1>
+                    <p>Le site est encore en développement, bientot tu auras acces à tes cours et divers documents.</p>
+                    <p>En attendant n'hésite pas à ouvrir le livre pour modifier tes données.</p>
                 </figcaption>
             </figure>
         </li>

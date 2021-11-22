@@ -7,7 +7,6 @@
 main {
     display: flex;
     align-content: center;
-    justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: rgb(207, 137, 110);
@@ -90,15 +89,17 @@ img {
         padding: 0;
         width: 55%;
     }
-    .book{
+
+    .book {
         width: 100%;
         height: auto;
         padding: 0;
         margin: 0;
-        border-top-right-radius:0;
+        border-top-right-radius: 0;
         border-bottom-left-radius: 20px;
     }
-    .bouton a{
+
+    .bouton a {
         padding: 0;
     }
 }

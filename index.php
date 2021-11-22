@@ -42,8 +42,10 @@ $connect = mysqli_connect("localhost", "root", "", "moduleconnexion"); /*connexi
         echo "<div class='card'>";
         echo "<div class='text'> <p>  La carte de membre de <b> $login </b> </p>
                                      <p>$nom </p>
-                                     <p>$prenom</p></div>";
+                                     <p>$prenom</p>";
+        echo " <div class='bouton'><p><a href='php/book.php'>Aller au livre!</a></p></div></div>";
         echo "<img src='asset/image/book-library-with-open-textbook.jpg' alt='bibliotheque' class='book'>";
+
         echo "</div>";
 
     } else {
